@@ -39,4 +39,4 @@ Be sure to check www/index.php to see how you can use hostnames to refer to othe
 
 ## License
 
-Copyright &copy; 2014-2018 [Kasper Kronborg Isager](http://github.com/kasperisager). Licensed under the terms of the [MIT license](LICENSE.md).
+Copyright &copy; 2018 [Abbas Naderi](https://abiusx.com). Licensed under the terms of the [MIT license](LICENSE.md).
