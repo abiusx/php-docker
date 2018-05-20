@@ -22,12 +22,15 @@ mysql:
     - 3306
   environment:
     MYSQL_ROOT_PASSWORD: 123456aB
+  volumes:
+# Init MySQL
+    - ./sql/:/docker-entrypoint-initdb.d/
+# Export error logs    
+    - ../logs/mysql:/var/log/mysql
 
 phpmyadmin:
   image: phpmyadmin/phpmyadmin
 ## No need to expose anything, accessed internally through Apache proxy
-#  ports:
-#    - "8080:80"
   links:
     - mysql:db
   environment:

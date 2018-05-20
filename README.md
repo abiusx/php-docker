@@ -30,7 +30,7 @@ PHP Docker gives you everything you need for developing PHP applications locally
 Cd into docker folder and run:
 
 ```sh
-$ docker-compose up
+$ docker-compose up -d
 ```
 
 That's it! Browse through http://localhost or https://localhost (requires accepting self-signed certificate). phpMyAdmin is available via https://localhost/phpmyadmin.
