@@ -6,7 +6,7 @@ Uses PHP 7.0, but switching to 7.1 or 7.2 should be a one-liner.
 
 [![Build Status](https://travis-ci.org/abiusx/php-docker.svg)](https://travis-ci.org/abiusx/php-docker)
 
-PHP Docker gives you everything you need for developing PHP applications locally on a Docker stack. It is based on Apache (you can find the Nginx alternatives at [This](https://github.com/kasperisager/php-dockerized))
+PHP Docker gives you everything you need for developing PHP applications locally on a Docker stack. It is based on Apache (you can find the Nginx alternatives [here](https://github.com/kasperisager/php-dockerized))
 
 ## What's inside
 
