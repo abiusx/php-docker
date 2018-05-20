@@ -1,0 +1,59 @@
+front:
+  build: .
+  ports:
+    - "80:80"
+    - "443:443"
+    - "9000:9000"
+  links:
+    - mysql:mysql
+    - phpmyadmin:phpmyadmin
+    - memcached:memcached
+    - redis:redis
+    - elasticsearch:elasticsearch
+    - rabbitmq:rabbitmq
+  volumes:
+    - ../www:/var/www/html
+    - ../logs:/var/log/supervisor
+
+mysql:
+# MySQL 5.8 has issues
+  image: mysql:5.7
+  ports:
+    - 3306
+  environment:
+    MYSQL_ROOT_PASSWORD: 123456aB
+
+phpmyadmin:
+  image: phpmyadmin/phpmyadmin
+## No need to expose anything, accessed internally through Apache proxy
+#  ports:
+#    - "8080:80"
+  links:
+    - mysql:db
+  environment:
+    PMA_USER: root
+    PMA_PASSWORD: 123456aB
+# Play nice behind a proxy    
+    PMA_ABSOLUTE_URI: http://localhost/phpmyadmin/
+
+memcached:
+  image: memcached
+  ports:
+    - "11211:11211"
+
+redis:
+  image: redis
+  ports:
+    - "6379:6379"
+
+elasticsearch:
+  image: elasticsearch
+  ports:
+    - "9200:9200"
+    - "9300:9300"
+
+rabbitmq:
+  image: rabbitmq:3.6.1-management
+  ports:
+    - "15672:15672"
+    - "5672:5672"
