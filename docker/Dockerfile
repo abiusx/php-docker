@@ -12,6 +12,7 @@ RUN docker-php-ext-install \
 
 RUN pecl install memcached
 RUN pecl install redis
+RUN docker-php-ext-enable memcached redis
 
 RUN curl 'https://getcomposer.org/installer' | php -- --install-dir=/usr/bin --filename=composer
 
